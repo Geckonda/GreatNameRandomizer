@@ -145,3 +145,13 @@ function shuffle(array) {
    }
    return array;
  }
+
+ content.addEventListener('click', (event) => {
+  const target = event.target;
+  
+  if (target.classList.contains('item') && remainingItems.length > 1) {
+      const itemId = target.dataset.id;
+      remainingItems = remainingItems.filter(item => item !== itemId)
+      content.removeChild(target);
+  }
+});
